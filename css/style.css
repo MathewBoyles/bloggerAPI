@@ -1,0 +1,30 @@
+body {
+  width: 1200px;
+  margin: 20px auto; }
+
+h1 {
+  color: #34322d;
+  font-size: 3em; }
+
+h5 {
+  font-size: 1.2em;
+  color: #34322d;
+  margin-bottom: 20px; }
+
+.post {
+  width: 100%;
+  border: 2px solid #34322d;
+  background-color: #e1e1df;
+  margin-bottom: 20px; }
+  .post > * {
+    margin: 10px 20px 10px 20px; }
+
+.title {
+  color: #34322d;
+  font-size: 1.2em; }
+
+textarea {
+  outline: none;
+  resize: none;
+  border: none;
+  background-color: #e1e1df; }

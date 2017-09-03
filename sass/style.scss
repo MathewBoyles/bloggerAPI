@@ -1,0 +1,50 @@
+$postSize: 600px;
+$primaryColour: #34322D;
+$secondaryColour: #E1E1DF;
+$buttonColour: #C4C3C0;
+$headingFontSize: 3em;
+$titleFontSize: 1.2em;
+$textFontSize: 1em;
+$twenty: 20px;
+$ten: 10px;
+
+
+body {
+    width: 1200px;
+    margin: $twenty auto;
+}
+
+h1 {
+    color: $primaryColour;
+    font-size: $headingFontSize;
+}
+
+h5 {
+    font-size: $titleFontSize;
+    color: $primaryColour;
+    margin-bottom: $twenty;
+}
+
+.post {
+    width: 100%;
+    border: 2px solid $primaryColour;
+    background-color: $secondaryColour;
+    margin-bottom: $twenty;
+        > * {
+            margin: $ten $twenty $ten $twenty;
+        }
+}
+
+.title {
+    color: $primaryColour;
+    font-size: $titleFontSize;
+
+}
+
+textarea {
+    outline: none;
+    resize: none;
+    border: none;
+    background-color: $secondaryColour;
+
+}
