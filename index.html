@@ -3,12 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" src="node_modules/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" src="css/style.css" />
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
+    <div id="wrapper">
+        <div id="main"></div>
 
+        <div id="sidebar">
+            <div id="sidebar-heading">
+                <img src="img/bats.jpg" class="img-thumbnail" />
+                <h2>Bats Blog</h2>
+                <p>Bats, bats, bats!</p>
+            </div>
+            <hr />
+            <a href="#" class="btn btn-secondary btn-block brn-lg" title="Create new post" id="sidebar-new"><i class="fa fa-plus"></i> New post</a>
+            <hr />
+            <ul>
+                <li>
+                    <a href="#">Link</a>
+                </li>
+                <li>
+                    <a href="#">Link</a>
+                </li>
+                <li>
+                    <a href="#">Link</a>
+                </li>
+                <li>
+                    <a href="#">Link</a>
+                </li>
+                <li>
+                    <a href="#">Link</a>
+                </li>
+            </ul>
+            <hr />
+            <form onsubmit="return false">
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                  <input type="text" class="form-control" placeholder="Search...">
+                  <div class="input-group-addon">
+                      <i class="fa fa-search"></i>
+                  </div>
+                </div>
+            </form>
+            <div id="sidebar-copyright">
+                <hr />
+                &copy; Copyright 2017
+            </div>
+        </div>
+    </div>
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>

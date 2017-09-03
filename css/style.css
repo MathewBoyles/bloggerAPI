@@ -1,0 +1,57 @@
+#wrapper #main,
+#wrapper #sidebar {
+  display: inline-block;
+  height: 100vh; }
+#wrapper #main {
+  width: calc(100% - 400px);
+  margin-left: 400px;
+  padding: 20px 30px; }
+#wrapper #sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #34322d;
+  color: #fff;
+  box-shadow: -2px 0 20px 5px #b6b2aa;
+  height: 100vh;
+  text-align: center;
+  padding: 80px 40px 40px;
+  width: 400px; }
+  #wrapper #sidebar hr {
+    border-color: #5d5950;
+    border-style: dashed;
+    margin: 50px 0; }
+  #wrapper #sidebar #sidebar-heading > img {
+    background: #b6b2aa;
+    width: 100px;
+    border-radius: 50%; }
+  #wrapper #sidebar #sidebar-heading h2 {
+    margin: 15px 0 20px;
+    text-transform: uppercase;
+    font-weight: bold; }
+  #wrapper #sidebar #sidebar-new {
+    margin: -20px 0; }
+  #wrapper #sidebar > ul {
+    margin-top: -10px;
+    list-style: none;
+    padding: 0; }
+    #wrapper #sidebar > ul > li {
+      margin-top: 20px; }
+      #wrapper #sidebar > ul > li a {
+        color: #868174;
+        text-transform: uppercase;
+        transition: all 0.5s;
+        text-decoration: none; }
+        #wrapper #sidebar > ul > li a:hover {
+          color: white;
+          font-weight: bold; }
+  #wrapper #sidebar .form-control {
+    border-color: #cdcbc6; }
+  #wrapper #sidebar #sidebar-copyright {
+    color: #868174;
+    width: calc(400px - 80px);
+    position: absolute;
+    bottom: 20px;
+    font-size: 0.7em; }
+    #wrapper #sidebar #sidebar-copyright hr {
+      margin: 20px 0; }
