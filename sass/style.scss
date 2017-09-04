@@ -1,91 +1,173 @@
-$primary-color: #34322D;
+$primaryColour: #34322D;
+$secondaryColour: #E1E1DF;
 $sidebar-width: 400px;
+$buttonColour: #C4C3C0;
+$headingFontSize: 3em;
+$titleFontSize: 1.2em;
+$textFontSize: 1em;
 
 #wrapper {
-  #main,
-  #sidebar {
-    display: inline-block;
-    height: 100vh;
-  }
-
-  #main {
-    width: calc(100% - #{$sidebar-width});
-    margin-left: $sidebar-width;
-    padding: 20px 30px;
-  }
-
-  #sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: $primary-color;
-    color: #fff;
-    box-shadow: -2px 0 20px 5px lighten($primary-color, 50);
-    height: 100vh;
-    text-align: center;
-    padding: 80px 40px 40px;
-    width: $sidebar-width;
-
-    hr {
-      border-color: lighten($primary-color, 15);
-      border-style: dashed;
-      margin: 50px 0;
+    #main,
+    #sidebar {
+        display: inline-block;
+        height: 100vh;
     }
 
-    #sidebar-heading {
-      > img {
-        background: lighten($primary-color, 50);
-        width: 100px;
-        border-radius: 50%;
-      }
-
-      h2 {
-        margin: 15px 0 20px;
-        text-transform: uppercase;
-        font-weight: bold;
-      }
+    #main {
+        width: calc(100% - #{$sidebar-width});
+        margin-left: $sidebar-width;
+        padding: 20px 30px;
     }
 
-    #sidebar-new {
-      margin: -20px 0;
-    }
+    #sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: $primaryColour;
+        color: #fff;
+        box-shadow: -2px 0 20px 5px lighten($primaryColour, 50);
+        height: 100vh;
+        text-align: center;
+        padding: 80px 40px 40px;
+        width: $sidebar-width;
 
-    > ul {
-      margin-top: -10px;
-      list-style: none;
-      padding: 0;
-
-      > li {
-        margin-top: 20px;
-
-        a {
-          color: lighten($primary-color, 30);
-          text-transform: uppercase;
-          transition: all 0.5s;
-          text-decoration: none;
-
-          &:hover {
-            color: lighten($primary-color, 90);
-            font-weight: bold;
-          }
+        hr {
+            border-color: lighten($primaryColour, 15);
+            border-style: dashed;
+            margin: 42px 0;
         }
-      }
+
+        #sidebar-heading {
+            > img {
+                background: lighten($primaryColour, 50);
+                width: 100px;
+                border-radius: 50%;
+            }
+
+            h2 {
+                margin: 15px 0 20px;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+        }
+
+        #sidebar-new {
+            margin: -20px 0;
+        }
+
+        > ul {
+            margin-top: -10px;
+            list-style: none;
+            padding: 0;
+
+            > li {
+                margin-top: 20px;
+
+                a {
+                    color: lighten($primaryColour, 30);
+                    text-transform: uppercase;
+                    transition: all 0.5s;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: lighten($primaryColour, 90);
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+        .form-control {
+            border-color: lighten($primaryColour, 60);
+        }
+
+        #sidebar-copyright {
+            color: lighten($primaryColour, 30);
+            width: calc(#{$sidebar-width} - 80px);
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.7em;
+
+            hr {
+                margin: 20px 0;
+            }
+        }
+    }
+}
+
+#main {
+    #new-post {
+        display: none;
     }
 
-    .form-control {
-      border-color: lighten($primary-color, 60);
+    h1 {
+        color: $primaryColour;
+        font-size: $headingFontSize;
     }
 
-    #sidebar-copyright {
-      color: lighten($primary-color, 30);
-      width: calc(#{$sidebar-width} - 80px);
-      position: absolute;
-      bottom: 20px;
-      font-size: 0.7em;
-
-      hr {
-        margin: 20px 0;
-      }
+    h5 {
+        font-size: $titleFontSize;
+        color: $primaryColour;
+        margin-bottom: 20px;
     }
-  }
+
+    .post {
+        width: 100%;
+        border: 2px solid $primaryColour;
+        background-color: $secondaryColour;
+        margin-bottom: 20px;
+        padding: 15px 10px;
+
+        > * {
+            margin: 10px 20px;
+        }
+
+        .title {
+            font-size: 1.2em;
+        }
+
+        &.newPost {
+            h2.title {
+                font-size: 1.5em;
+            }
+
+            label {
+                width: calc(100% - 40px);
+
+                span {
+                    display: block;
+                    font-size: 1.2em;
+                    color: #000;
+                }
+
+                input,
+                textarea {
+                    outline: none;
+                    border: none;
+                    background-color: $secondaryColour;
+                    color: #3e3e3e;
+                    width: 100%;
+                }
+
+                input {
+                    border-bottom: 1px dashed darken($secondaryColour, 30);
+
+                    &:focus {
+                        border-bottom: 1px solid darken($secondaryColour, 40);
+                    }
+                }
+
+                textarea {
+                    border: 1px dashed darken($secondaryColour, 30);
+
+                    &:focus {
+                        border: 1px solid darken($secondaryColour, 40);
+                    }
+
+                    resize: vertical;
+                }
+
+            }
+        }
+    }
 }

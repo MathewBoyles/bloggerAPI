@@ -20,7 +20,7 @@
   #wrapper #sidebar hr {
     border-color: #5d5950;
     border-style: dashed;
-    margin: 50px 0; }
+    margin: 42px 0; }
   #wrapper #sidebar #sidebar-heading > img {
     background: #b6b2aa;
     width: 100px;
@@ -55,3 +55,49 @@
     font-size: 0.7em; }
     #wrapper #sidebar #sidebar-copyright hr {
       margin: 20px 0; }
+
+#main #new-post {
+  display: none; }
+#main h1 {
+  color: #34322d;
+  font-size: 3em; }
+#main h5 {
+  font-size: 1.2em;
+  color: #34322d;
+  margin-bottom: 20px; }
+#main .post {
+  width: 100%;
+  border: 2px solid #34322d;
+  background-color: #e1e1df;
+  margin-bottom: 20px;
+  padding: 15px 10px; }
+  #main .post > * {
+    margin: 10px 20px; }
+  #main .post .title {
+    font-size: 1.2em; }
+  #main .post.newPost h2.title {
+    font-size: 1.5em; }
+  #main .post.newPost label {
+    width: calc(100% - 40px); }
+    #main .post.newPost label span {
+      display: block;
+      font-size: 1.2em;
+      color: #000; }
+    #main .post.newPost label input,
+    #main .post.newPost label textarea {
+      outline: none;
+      border: none;
+      background-color: #e1e1df;
+      color: #3e3e3e;
+      width: 100%; }
+    #main .post.newPost label input {
+      border-bottom: 1px dashed #979790; }
+      #main .post.newPost label input:focus {
+        border-bottom: 1px solid #7e7e76; }
+    #main .post.newPost label textarea {
+      border: 1px dashed #979790;
+      resize: vertical; }
+      #main .post.newPost label textarea:focus {
+        border: 1px solid #7e7e76; }
+
+/*# sourceMappingURL=style.css.map */

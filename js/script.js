@@ -1,16 +1,13 @@
 $(document).ready(function() {
 
-    // dummy content w/ endless scroll
-    (function() {
-        while ($(document).height() <= ($(window).height() + 10)) {
-          $("#main").append("<hr />");
-        }
+    $("#sidebar-new").click(function(){
+        $("#new-post").slideDown();
+        $("#new-post input:first").focus();
+    });
 
-        $(window).on("scroll", function() {
-          if ($(window).scrollTop() >= ($(document).height() - $(window).height())) {
-            $("#main").append("<hr />");
-          }
-        });
-    }());
+    $("textarea").on("input", function(){
+        $(this).height(0);
+        $(this).height($(this)[0].scrollHeight);
+    });
 
 });
