@@ -2,7 +2,7 @@ var config;
 
 $(document).ready(function() {
 
-    $.getJSON("/js/config.json", function(data){
+    $.getJSON("/config.json", function(data){
         config = data;
         init();
     });

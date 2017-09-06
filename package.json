@@ -2,7 +2,7 @@
   "name": "blogger-formative",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/mathewboyles/bloggerAPI#readme",
   "dependencies": {
     "bootstrap": "^4.0.0-beta",
+    "express": "^4.15.4",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1"
   }
