@@ -26,8 +26,6 @@ $(document).ready(function() {
     $("#create-post").submit(function(event){
         event.preventDefault();
 
-        console.log($(this).find("[name=\"image\"]"));
-
         var imageError = false;
         if($(this).find("[name=\"image\"]")[0].files[0]) {
             var file = $(this).find("[name=\"image\"]")[0].files[0];
@@ -68,10 +66,9 @@ function start() {
       "requestMask.includeField": "person.names"
     });
   }).then(function(response) {
-    console.log(response.result);
+
   }, function(reason) {
-    console.log(reason);
-    console.log("Error: " + reason.details);
+    console.log("Error", reason);
   });
 };
 
