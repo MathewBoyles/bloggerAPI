@@ -58,6 +58,8 @@
 
 #main #new-post {
   display: none; }
+  #main #new-post #post-error {
+    display: none; }
 #main h1 {
   color: #34322d;
   font-size: 3em; }
@@ -65,39 +67,39 @@
   font-size: 1.2em;
   color: #34322d;
   margin-bottom: 20px; }
-#main .post {
-  width: 100%;
-  border: 2px solid #34322d;
+#main .card {
+  border-color: #34322d;
   background-color: #e1e1df;
-  margin-bottom: 20px;
-  padding: 15px 10px; }
-  #main .post > * {
-    margin: 10px 20px; }
-  #main .post .title {
-    font-size: 1.2em; }
-  #main .post.newPost h2.title {
-    font-size: 1.5em; }
-  #main .post.newPost label {
-    width: calc(100% - 40px); }
-    #main .post.newPost label span {
+  margin-bottom: 20px; }
+  #main .card.newPost h2.title {
+    font-size: 1.5em;
+    margin-bottom: 20px; }
+  #main .card.newPost label {
+    width: calc(100% - 40px);
+    margin-bottom: 10px; }
+    #main .card.newPost label > span {
       display: block;
       font-size: 1.2em;
-      color: #000; }
-    #main .post.newPost label input,
-    #main .post.newPost label textarea {
+      color: #969696; }
+    #main .card.newPost label span.text-red {
+      color: red; }
+    #main .card.newPost label input,
+    #main .card.newPost label textarea {
       outline: none;
       border: none;
       background-color: #e1e1df;
-      color: #3e3e3e;
+      color: #000;
       width: 100%; }
-    #main .post.newPost label input {
+    #main .card.newPost label input:not([type="file"]) {
       border-bottom: 1px dashed #979790; }
-      #main .post.newPost label input:focus {
+      #main .card.newPost label input:not([type="file"]):focus {
         border-bottom: 1px solid #7e7e76; }
-    #main .post.newPost label textarea {
+    #main .card.newPost label textarea {
       border: 1px dashed #979790;
-      resize: vertical; }
-      #main .post.newPost label textarea:focus {
+      resize: none; }
+      #main .card.newPost label textarea:focus {
         border: 1px solid #7e7e76; }
+  #main .card.newPost button[type="button"] {
+    margin-left: 0; }
 
 /*# sourceMappingURL=style.css.map */
