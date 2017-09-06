@@ -1,4 +1,4 @@
-var config;
+var config, token;
 
 $(document).ready(function() {
 
@@ -8,6 +8,10 @@ $(document).ready(function() {
     });
 
     $("#sidebar-new").click(function(){
+        if(!token) {
+            window.location = "/auth";
+            return;
+        }
         $("#new-post").slideDown();
         $("#new-post input:first").focus();
     });
@@ -42,35 +46,51 @@ $(document).ready(function() {
             $("#post-error").html("Invalid file type. Images only.").show();
         } else {
             $("#post-error").hide();
-            alert("Good");
+
+            $.ajax({ 
+                url: "/post",
+                data: {
+                    title: $("#post-title").val(),
+                    content: $("#post-text").val(),
+                    token: token
+                },
+                success: function(data){
+                    console.log(data);
+
+                    setTimeout(loadPosts, 1000);
+                }
+            });
         }
     });
+
+    if(parseQueryString()["code"]) {
+        setTimeout(function(){
+            $.ajax({
+                url: "/gettoken",
+                data: {
+                    code: parseQueryString()["code"]
+                },
+                success: function(data){
+                    if(data == "error") alert("Auth error");
+                    else {
+                        token = data;
+                        sessionStorage.setItem("batsblog__token", data);
+                        $("#new-post").slideDown();
+                        $("#new-post input:first").focus();
+                    }
+
+                    history.pushState(document.title, {}, "/");
+                }
+            });
+        }, 1000);
+    }
 });
 
 function init(){
     loadPosts();
-    gapi.load("client", start);
 
     setInterval(loadPosts, 30000);
 }
-
-function start() {
-  gapi.client.init({
-    "apiKey": config.apiKey,
-    "discoveryDocs": ["https://people.googleapis.com/$discovery/rest"],
-    "clientId": config.clientID,
-    "scope": "profile",
-  }).then(function() {
-    return gapi.client.people.people.get({
-      "resourceName": "people/me",
-      "requestMask.includeField": "person.names"
-    });
-  }).then(function(response) {
-
-  }, function(reason) {
-    console.log("Error", reason);
-  });
-};
 
 function loadPosts(){
     $.ajax({
@@ -112,3 +132,17 @@ function loadPosts(){
         }
     })
 }
+
+function parseQueryString() {
+    var urlParams = {};
+    window.location.search.replace(
+        new RegExp("([^?=&]+)(=([^&]*))?", "g"),
+        function($0, $1, $2, $3) {
+            urlParams[$1] = $3;
+        }
+    );
+
+    return urlParams;
+}
+
+token = sessionStorage.getItem("batsblog__token");
