@@ -24,7 +24,9 @@
   "homepage": "https://github.com/mathewboyles/bloggerAPI#readme",
   "dependencies": {
     "bootstrap": "^4.0.0-beta",
+    "express": "^4.15.4",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "path": "^0.12.7"
   }
 }
