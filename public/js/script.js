@@ -30,24 +30,14 @@ $(document).ready(function() {
     $("#create-post").submit(function(event){
         event.preventDefault();
 
-        var imageError = false;
-        if($(this).find("[name=\"image\"]")[0].files[0]) {
-            var file = $(this).find("[name=\"image\"]")[0].files[0];
-            var fileType = file["type"];
-            var ValidImageTypes = ["image/gif", "image/jpeg", "image/png"];
-            if ($.inArray(fileType, ValidImageTypes) < 0) imageError = true;
-        }
-
         if($(":input[data-required]").filter(function(){
             return !$(this).val();
         }).length) {
             $("#post-error").html("Please enter all required fields.").show();
-        } else if(imageError) {
-            $("#post-error").html("Invalid file type. Images only.").show();
         } else {
             $("#post-error").hide();
 
-            $.ajax({ 
+            $.ajax({
                 url: "/post",
                 data: {
                     title: $("#post-title").val(),
@@ -56,6 +46,8 @@ $(document).ready(function() {
                 },
                 success: function(data){
                     console.log(data);
+                    $("#new-post").slideUp();
+                    $("#create-post")[0].reset();
 
                     setTimeout(loadPosts, 1000);
                 }
