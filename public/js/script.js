@@ -13,6 +13,7 @@ $(document).ready(function() {
 
         var searchTerm = $(this).val().toLowerCase();
 
+        $("#posts .card").removeClass("has-search");
         $("#posts .card .search").each(function() {
             $(this).before($(this).html());
             $(this).remove();
@@ -45,7 +46,7 @@ $(document).ready(function() {
 
                 $(this).find(".card-body div:first").html(body);
             }
-        });
+        }).addClass("has-search");
     });
 
     $("#sidebar-new").click(function() {

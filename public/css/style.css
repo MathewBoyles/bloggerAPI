@@ -70,7 +70,10 @@
 #main .card {
   border-color: #34322d;
   background-color: #e1e1df;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  transition: border 0.2s; }
+  #main .card.has-search {
+    border-color: yellow; }
   #main .card .search {
     background: yellow; }
   #main .card.newPost h2.title {

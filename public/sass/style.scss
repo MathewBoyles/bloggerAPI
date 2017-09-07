@@ -119,6 +119,11 @@ $textFontSize: 1em;
         border-color: $primaryColour;
         background-color: $secondaryColour;
         margin-bottom: 20px;
+        transition: border 0.2s;
+
+        &.has-search {
+            border-color: yellow;
+        }
 
         .search {
             background: yellow;
