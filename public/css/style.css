@@ -71,6 +71,8 @@
   border-color: #34322d;
   background-color: #e1e1df;
   margin-bottom: 20px; }
+  #main .card .search {
+    background: yellow; }
   #main .card.newPost h2.title {
     font-size: 1.5em;
     margin-bottom: 20px; }

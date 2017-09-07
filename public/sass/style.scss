@@ -120,6 +120,10 @@ $textFontSize: 1em;
         background-color: $secondaryColour;
         margin-bottom: 20px;
 
+        .search {
+            background: yellow;
+        }
+
         &.newPost {
             h2.title {
                 font-size: 1.5em;
